@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #FAF3E0;
+    color: #333333;
+  }
+  
+  /* Hindi font support */
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  
+  .font-english {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  /* Rural-friendly button styles */
+  .btn-rural {
+    @apply px-6 py-4 text-rural-base font-semibold rounded-xl shadow-lg transition-all duration-200 transform active:scale-95 focus:outline-none focus:ring-4;
+  }
+  
+  .btn-rural-primary {
+    background-color: #FF9933;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-rural-primary:hover {
+    background-color: #e68322;
+  }
+
+  .btn-rural-secondary {
+    background-color: #ffffff;
+    color: #138808;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid #138808;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-rural-secondary:hover {
+    background-color: rgba(19, 136, 8, 0.08);
+  }
+
+  .btn-icon-large {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-icon-large:hover {
+    background-color: rgba(19, 136, 8, 0.08);
+  }
+
+  /* Simple input styles */
+  .input-rural {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .input-rural:focus {
+    outline: none;
+    border-color: #138808;
+    box-shadow: 0 0 0 3px rgba(19, 136, 8, 0.15);
+  }
+
+  /* Simple card styles */
+  .card-rural {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Simple metric card styles */
+  .metric-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .metric-card-primary {
+    border-top: 4px solid #FF9933;
+  }
+
+  .metric-card-accent {
+    border-top: 4px solid #138808;
+  }
+
+  .metric-card-neutral {
+    border-top: 4px solid #333333;
+  }
+
+  .metric-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 153, 51, 0.15);
+    color: #FF9933;
+  }
+
+  .metric-icon-accent {
+    background-color: rgba(19, 136, 8, 0.15);
+    color: #138808;
+  }
+
+  .metric-icon-neutral {
+    background-color: rgba(51, 51, 51, 0.12);
+    color: #333333;
+  }
+
+  /* Status indicators */
+  .status-indicator {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-success {
+    @apply status-indicator bg-success-100 text-success-800;
+  }
+  
+  .status-warning {
+    @apply status-indicator bg-warning-100 text-warning-800;
+  }
+  
+  .status-error {
+    @apply status-indicator bg-error-100 text-error-800;
+  }
+  
+  .status-info {
+    @apply status-indicator bg-primary-100 text-primary-800;
+  }
+  
+  /* Loading animations */
+  .loading-spinner {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 153, 51, 0.2);
+    border-top-color: #FF9933;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  .text-english {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .flag-accent {
+    background: linear-gradient(90deg, #FF9933 0%, #ffffff 50%, #138808 100%);
+    height: 4px;
+    border-radius: 999px;
+  }
+
+  .chakra-spinner {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 6px solid rgba(19, 136, 8, 0.2);
+    border-top-color: #138808;
+    animation: spin 1s linear infinite;
+  }
+
+  /* Accessibility improvements */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .btn-rural {
+      @apply border-2 border-gray-800;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .btn-rural,
+    .card-rural-hover,
+    .input-rural {
+      @apply transition-none;
+    }
+    
+    .loading-spinner {
+      @apply animate-none;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .no-print {
+      @apply hidden;
+    }
+    
+    .card-rural {
+      @apply shadow-none border border-gray-400;
+    }
+  }
+}
+
+@layer utilities {
+  .text-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  .text-english {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .flag-accent {
+    background: linear-gradient(90deg, #FF9933 0%, #ffffff 50%, #138808 100%);
+    height: 4px;
+    border-radius: 999px;
+  }
+
+  .chakra-spinner {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 6px solid rgba(19, 136, 8, 0.2);
+    border-top-color: #138808;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
